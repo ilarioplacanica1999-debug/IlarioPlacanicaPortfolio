@@ -326,10 +326,19 @@
       height: 210px;
       border-radius: 18px;
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.10);
+      border: none;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
       overflow:hidden;
       position: relative;
+      transition: transform .25s ease, box-shadow .25s ease;
+      transform: translateZ(0);
+      cursor: pointer;      
     }
+    .work:hover{
+      transform: scale(1.05);
+      box-shadow: 0 18px 45px rgba(0,0,0,.45);
+    }
+    
     /* Optional images (upload these files) */
     .work.one{ background-image: url("assets/img/work-1.JPG"); background-size: cover; background-position: center; }
     .work.two{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
