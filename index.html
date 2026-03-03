@@ -396,9 +396,12 @@
     }
     .cta.dark .dot{ background: rgba(255,90,31,.95); }
 
+    /* ==========================
+       SOFTWARE BOXES (replaces stats)
+       ========================== */
     .stats{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 12px;
       margin-top: 12px;
     }
@@ -409,17 +412,26 @@
       padding: 14px 14px 12px;
       box-shadow: 0 10px 26px rgba(0,0,0,.28);
       min-height: 92px;
+
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align:center;
     }
-    .stat .n{
-      font-weight: 900;
-      font-size: 28px;
-      letter-spacing: -0.5px;
+    .tool-icon{
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));
     }
-    .stat .t{
-      margin-top: 6px;
-      color: rgba(255,255,255,.68);
+    .tool-name{
+      font-weight: 800;
       font-size: 11px;
-      line-height: 1.4;
+      letter-spacing: .2px;
+      color: rgba(255,255,255,.82);
+      line-height: 1.2;
     }
 
     .project-media{
@@ -773,7 +785,6 @@
               Let’s build something<br/>meaningful together.
             </div>
 
-            <!-- ✅ ONLY get in touch left -->
             <a class="cta" href="mailto:ilario.placanica1999@gmail.com?subject=Portfolio%20contact&body=Hi%20Ilario,%0A%0A">
               Get in touch
               <span class="dot" aria-hidden="true">
@@ -803,7 +814,6 @@
               Mantieni 2–3 righe come nella reference.
             </p>
 
-            <!-- only back button -->
             <div class="project-actions">
               <a class="cta dark" href="#projects">
                 Back to previews
@@ -816,9 +826,28 @@
             </div>
 
             <div class="stats">
-              <div class="stat"><div class="n">65</div><div class="t">frames / shots consegnati</div></div>
-              <div class="stat"><div class="n">7+</div><div class="t">iterazioni di revisione</div></div>
-              <div class="stat"><div class="n">180+</div><div class="t">assets / materiali gestiti</div></div>
+              <!-- UPLOAD THESE ICONS IN assets/img/ (Work 1 tools):
+                   icon-unreal-engine.png
+                   icon-blender.png
+                   icon-photoshop.png
+                   icon-substance.png
+              -->
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-unreal-engine.png" alt="Unreal Engine">
+                <div class="tool-name">Unreal Engine</div>
+              </div>
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender">
+                <div class="tool-name">Blender</div>
+              </div>
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-photoshop.png" alt="Adobe Photoshop">
+                <div class="tool-name">Photoshop</div>
+              </div>
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-substance.png" alt="Substance 3D">
+                <div class="tool-name">Substance 3D</div>
+              </div>
             </div>
           </div>
 
@@ -888,7 +917,7 @@
         <div class="project-hero">
           <div>
             <div class="section-kicker">Work 02</div>
-            <h2 class="project-title">"CAPO" from "Necroville" - 2D to Real-Time 3D </h2>
+            <h2 class="project-title">"CAPO" from "Necroville" - 2D to Real-Time 3D</h2>
             <p class="project-sub">Descrizione breve del progetto 2.</p>
 
             <div class="project-actions">
@@ -903,9 +932,28 @@
             </div>
 
             <div class="stats">
-              <div class="stat"><div class="n">12</div><div class="t">scene / set</div></div>
-              <div class="stat"><div class="n">4</div><div class="t">revision rounds</div></div>
-              <div class="stat"><div class="n">2</div><div class="t">final variants</div></div>
+              <!-- UPLOAD THESE ICONS IN assets/img/ (Work 2 tools):
+                   icon-unreal-engine.png
+                   icon-blender.png
+                   icon-zbrush.png
+                   icon-substance.png
+              -->
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-unreal-engine.png" alt="Unreal Engine">
+                <div class="tool-name">Unreal Engine</div>
+              </div>
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender">
+                <div class="tool-name">Blender</div>
+              </div>
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-zbrush.png" alt="ZBrush">
+                <div class="tool-name">ZBrush</div>
+              </div>
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-substance.png" alt="Substance 3D">
+                <div class="tool-name">Substance 3D</div>
+              </div>
             </div>
           </div>
 
@@ -976,9 +1024,28 @@
             </div>
 
             <div class="stats">
-              <div class="stat"><div class="n">3</div><div class="t">key renders</div></div>
-              <div class="stat"><div class="n">1</div><div class="t">hero shot</div></div>
-              <div class="stat"><div class="n">8</div><div class="t">materials</div></div>
+              <!-- UPLOAD THESE ICONS IN assets/img/ (Work 3 tools):
+                   icon-photoshop.png
+                   icon-after-effects.png
+                   icon-blender.png
+                   icon-illustrator.png
+              -->
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-photoshop.png" alt="Adobe Photoshop">
+                <div class="tool-name">Photoshop</div>
+              </div>
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-after-effects.png" alt="Adobe After Effects">
+                <div class="tool-name">After Effects</div>
+              </div>
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender">
+                <div class="tool-name">Blender</div>
+              </div>
+              <div class="stat">
+                <img class="tool-icon" src="assets/img/icon-illustrator.png" alt="Adobe Illustrator">
+                <div class="tool-name">Illustrator</div>
+              </div>
             </div>
           </div>
 
