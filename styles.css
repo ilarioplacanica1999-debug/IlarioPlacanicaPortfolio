@@ -569,17 +569,17 @@ body {
   gap: 14px;
 }
 
-/* ✅ GALLERY ITEM (NO CROP + HOVER + CLICK) */
+/* ✅ GALLERY ITEM (fills box + taller, less crop) */
 .catalog-item{
-  height: 240px;
+  height: 320px;                 /* 🔥 più alto = meno crop */
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.10);
   background-color: rgba(0,0,0,.25);
   overflow:hidden;
   position: relative;
 
-  /* no crop */
-  background-size: contain;
+  /* ✅ fill the box */
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
@@ -603,6 +603,14 @@ body {
 .catalog-item:focus-visible{
   outline: 2px solid rgba(255,90,31,.85);
   outline-offset: 3px;
+}
+
+/* responsive heights so it stays nice */
+@media (max-width: 980px){
+  .catalog-item{ height: 260px; }
+}
+@media (max-width: 480px){
+  .catalog-item{ height: 220px; }
 }
 
 .catalog-item::after{
@@ -715,7 +723,7 @@ body {
 }
 
 /* =========================
-   LIGHTBOX
+   LIGHTBOX (no double border + arrows outside image)
    ========================= */
 body.lb-open{ overflow: hidden; }
 
@@ -731,26 +739,32 @@ body.lb-open{ overflow: hidden; }
 }
 .lightbox.open{ display: flex; }
 
+/* ✅ add side padding so arrows sit OUTSIDE the image */
 .lightbox-inner{
   width: min(1100px, 94vw);
   border-radius: 22px;
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(12,12,13,.88);
   box-shadow: 0 30px 90px rgba(0,0,0,.65);
-  padding: 16px;
+
+  padding: 16px 74px;   /* 🔥 space left/right for arrows */
   position: relative;
   backdrop-filter: blur(10px);
+  overflow: visible;    /* ✅ make sure arrows are visible */
 }
+
+/* ✅ remove double border: keep only container border */
 .lightbox img{
   width: 100%;
   height: min(78vh, 740px);
   object-fit: contain;
   display: block;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.25);
+  border: none;               /* ✅ no border here */
+  background: rgba(0,0,0,.18);
 }
 
+/* arrows */
 .lb-btn{
   position: absolute;
   top: 50%;
@@ -764,11 +778,13 @@ body.lb-open{ overflow: hidden; }
   place-items: center;
   cursor: pointer;
   backdrop-filter: blur(8px);
+  z-index: 5; /* ✅ above image */
 }
 .lb-btn:hover{ background: rgba(255,255,255,.16); }
 
-.lb-prev{ left: 14px; }
-.lb-next{ right: 14px; }
+/* ✅ arrows are OUTSIDE image (in the side padding area) */
+.lb-prev{ left: 18px; }
+.lb-next{ right: 18px; }
 
 .lb-close{
   position: absolute;
@@ -783,6 +799,7 @@ body.lb-open{ overflow: hidden; }
   place-items: center;
   cursor: pointer;
   backdrop-filter: blur(8px);
+  z-index: 6;
 }
 .lb-close:hover{ background: rgba(255,255,255,.16); }
 
@@ -791,9 +808,11 @@ body.lb-open{ overflow: hidden; }
   height: 18px;
 }
 
-@media (hover: none){
-  .work:hover{ transform: none; }
-  .catalog-item:hover{ transform: none; }
+/* on small screens reduce side padding so it fits */
+@media (max-width: 680px){
+  .lightbox-inner{ padding: 14px 54px; }
+  .lb-prev{ left: 12px; }
+  .lb-next{ right: 12px; }
 }
 
 @media (max-width: 980px){
