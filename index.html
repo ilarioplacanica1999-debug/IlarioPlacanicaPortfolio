@@ -122,12 +122,6 @@
             </div>
 
             <div class="stats">
-              <!-- UPLOAD THESE ICONS IN assets/img/ (Work 1 tools):
-                   icon-unreal-engine.png
-                   icon-blender.png
-                   icon-photoshop.png
-                   icon-substance.png
-              -->
               <div class="stat"><img class="tool-icon" src="assets/img/icon-unreal-engine.png" alt="Unreal Engine"></div>
               <div class="stat"><img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender"></div>
               <div class="stat"><img class="tool-icon" src="assets/img/icon-photoshop.png" alt="Adobe Photoshop"></div>
@@ -139,8 +133,16 @@
         </div>
 
         <div class="project-mid">
-          <div class="mid-visual">
-            <div class="placeholder">Opzionale: carica <strong>assets/img/work-1-detail.jpg</strong></div>
+          <!-- ✅ MAIN FINAL VIDEO (click opens lightbox) -->
+          <div class="mid-visual"
+               role="button" tabindex="0"
+               data-gallery="work-1-final"
+               data-src="assets/video/work-1-final.mp4"
+               data-label="Work 1 • Final video">
+            <!-- UPLOAD VIDEO: assets/video/work-1-final.mp4 -->
+            <video class="mid-video" autoplay muted loop playsinline preload="metadata">
+              <source src="assets/video/work-1-final.mp4" type="video/mp4">
+            </video>
           </div>
 
           <div class="features">
@@ -222,12 +224,6 @@
             </div>
 
             <div class="stats">
-              <!-- UPLOAD THESE ICONS IN assets/img/ (Work 2 tools):
-                   icon-unreal-engine.png
-                   icon-blender.png
-                   icon-zbrush.png
-                   icon-substance.png
-              -->
               <div class="stat"><img class="tool-icon" src="assets/img/icon-unreal-engine.png" alt="Unreal Engine"></div>
               <div class="stat"><img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender"></div>
               <div class="stat"><img class="tool-icon" src="assets/img/icon-zbrush.png" alt="ZBrush"></div>
@@ -239,8 +235,15 @@
         </div>
 
         <div class="project-mid">
-          <div class="mid-visual">
-            <div class="placeholder">Opzionale: carica <strong>assets/img/work-2-detail.jpg</strong></div>
+          <div class="mid-visual"
+               role="button" tabindex="0"
+               data-gallery="work-2-final"
+               data-src="assets/video/work-2-final.mp4"
+               data-label="Work 2 • Final video">
+            <!-- UPLOAD VIDEO: assets/video/work-2-final.mp4 -->
+            <video class="mid-video" autoplay muted loop playsinline preload="metadata">
+              <source src="assets/video/work-2-final.mp4" type="video/mp4">
+            </video>
           </div>
 
           <div class="features">
@@ -309,12 +312,6 @@
             </div>
 
             <div class="stats">
-              <!-- UPLOAD THESE ICONS IN assets/img/ (Work 3 tools):
-                   icon-photoshop.png
-                   icon-after-effects.png
-                   icon-blender.png
-                   icon-illustrator.png
-              -->
               <div class="stat"><img class="tool-icon" src="assets/img/icon-photoshop.png" alt="Adobe Photoshop"></div>
               <div class="stat"><img class="tool-icon" src="assets/img/icon-after-effects.png" alt="Adobe After Effects"></div>
               <div class="stat"><img class="tool-icon" src="assets/img/icon-blender.png" alt="Blender"></div>
@@ -326,8 +323,15 @@
         </div>
 
         <div class="project-mid">
-          <div class="mid-visual">
-            <div class="placeholder">Opzionale: carica <strong>assets/img/work-3-detail.jpg</strong></div>
+          <div class="mid-visual"
+               role="button" tabindex="0"
+               data-gallery="work-3-final"
+               data-src="assets/video/work-3-final.mp4"
+               data-label="Work 3 • Final video">
+            <!-- UPLOAD VIDEO: assets/video/work-3-final.mp4 -->
+            <video class="mid-video" autoplay muted loop playsinline preload="metadata">
+              <source src="assets/video/work-3-final.mp4" type="video/mp4">
+            </video>
           </div>
 
           <div class="features">
@@ -381,37 +385,40 @@
 
   <!-- LIGHTBOX (one time only) -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Media viewer">
       <button class="lb-close" type="button" id="lbClose" aria-label="Close">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M6 6l12 12M18 6L6 18" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
         </svg>
       </button>
 
-      <button class="lb-btn lb-prev" type="button" id="lbPrev" aria-label="Previous image">
+      <button class="lb-btn lb-prev" type="button" id="lbPrev" aria-label="Previous">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="Next image">
+      <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="Next">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <img id="lbImg" src="" alt="">
+      <img id="lbImg" src="" alt="" style="display:none;">
+      <video id="lbVid" style="display:none;" controls loop playsinline></video>
     </div>
   </div>
 
   <script>
     const lightbox = document.getElementById("lightbox");
     const lbImg = document.getElementById("lbImg");
+    const lbVid = document.getElementById("lbVid");
     const lbClose = document.getElementById("lbClose");
     const lbPrev = document.getElementById("lbPrev");
     const lbNext = document.getElementById("lbNext");
 
-    const items = Array.from(document.querySelectorAll(".catalog-item[data-src]"));
+    // include BOTH gallery buttons and mid videos
+    const items = Array.from(document.querySelectorAll("[data-src][data-gallery]"));
     const galleries = new Map();
 
     items.forEach((el) => {
@@ -423,6 +430,34 @@
     let currentGallery = null;
     let currentIndex = 0;
 
+    function isVideoSrc(src){
+      const s = (src || "").toLowerCase();
+      return s.endsWith(".mp4") || s.endsWith(".webm");
+    }
+
+    function showMedia(src, label){
+      if (isVideoSrc(src)) {
+        // show video
+        lbImg.style.display = "none";
+        lbImg.src = "";
+
+        lbVid.style.display = "block";
+        lbVid.src = src;
+        lbVid.muted = true; // autoplay policy
+        lbVid.play().catch(()=>{});
+        lbVid.setAttribute("aria-label", label || "Video");
+      } else {
+        // show image
+        lbVid.pause();
+        lbVid.style.display = "none";
+        lbVid.src = "";
+
+        lbImg.style.display = "block";
+        lbImg.src = src;
+        lbImg.alt = label || "Image";
+      }
+    }
+
     function openLightbox(galleryKey, index){
       currentGallery = galleryKey;
       currentIndex = index;
@@ -431,8 +466,13 @@
       const el = arr[currentIndex];
       if (!el) return;
 
-      lbImg.src = el.dataset.src;
-      lbImg.alt = el.querySelector(".label")?.textContent?.trim() || "Gallery image";
+      const src = el.dataset.src;
+      const label =
+        el.dataset.label ||
+        el.querySelector(".label")?.textContent?.trim() ||
+        "Media";
+
+      showMedia(src, label);
 
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
@@ -443,16 +483,29 @@
       lightbox.classList.remove("open");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.classList.remove("lb-open");
+
+      lbVid.pause();
+      lbVid.src = "";
+      lbVid.style.display = "none";
+
       lbImg.src = "";
+      lbImg.style.display = "none";
     }
 
     function go(delta){
       const arr = galleries.get(currentGallery) || [];
       if (!arr.length) return;
+
       currentIndex = (currentIndex + delta + arr.length) % arr.length;
       const el = arr[currentIndex];
-      lbImg.src = el.dataset.src;
-      lbImg.alt = el.querySelector(".label")?.textContent?.trim() || "Gallery image";
+
+      const src = el.dataset.src;
+      const label =
+        el.dataset.label ||
+        el.querySelector(".label")?.textContent?.trim() ||
+        "Media";
+
+      showMedia(src, label);
     }
 
     items.forEach((el) => {
