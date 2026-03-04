@@ -133,16 +133,27 @@
         </div>
 
         <div class="project-mid">
-          <!-- ✅ MAIN FINAL VIDEO (click opens lightbox) -->
-          <div class="mid-visual"
-               role="button" tabindex="0"
-               data-gallery="work-1-final"
-               data-src="assets/video/work-1-final.mp4"
-               data-label="Work 1 • Final video">
-            <!-- UPLOAD VIDEO: assets/video/work-1-final.mp4 -->
-            <video class="mid-video" autoplay muted loop playsinline preload="metadata">
-              <source src="assets/video/work-1-final.mp4" type="video/mp4">
-            </video>
+          <!-- ✅ WORK 1: VIMEO INLINE + opens in lightbox on click -->
+          <div class="mid-visual vimeo-mid">
+            <div class="vimeo">
+              <iframe
+                src="https://player.vimeo.com/video/1169865397?badge=0&autopause=0&autoplay=1&loop=1&muted=1"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                title="Immersive Real Estate Experience for Primula Costruzioni">
+              </iframe>
+            </div>
+
+            <!-- Click overlay (this is what opens the lightbox) -->
+            <button class="mid-open"
+              type="button"
+              aria-label="Open Work 1 video"
+              data-gallery="work-1-final"
+              data-src="vimeo:1169865397"
+              data-label="Work 1 • Final video">
+            </button>
           </div>
 
           <div class="features">
@@ -235,6 +246,7 @@
         </div>
 
         <div class="project-mid">
+          <!-- ✅ WORK 2: local mp4 (click opens lightbox, no arrows because single item) -->
           <div class="mid-visual"
                role="button" tabindex="0"
                data-gallery="work-2-final"
@@ -323,6 +335,7 @@
         </div>
 
         <div class="project-mid">
+          <!-- ✅ WORK 3: local mp4 (click opens lightbox, no arrows because single item) -->
           <div class="mid-visual"
                role="button" tabindex="0"
                data-gallery="work-3-final"
@@ -406,6 +419,11 @@
 
       <img id="lbImg" src="" alt="" style="display:none;">
       <video id="lbVid" style="display:none;" controls loop playsinline></video>
+      <iframe id="lbFrame" style="display:none;"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
     </div>
   </div>
 
@@ -413,11 +431,12 @@
     const lightbox = document.getElementById("lightbox");
     const lbImg = document.getElementById("lbImg");
     const lbVid = document.getElementById("lbVid");
+    const lbFrame = document.getElementById("lbFrame");
     const lbClose = document.getElementById("lbClose");
     const lbPrev = document.getElementById("lbPrev");
     const lbNext = document.getElementById("lbNext");
 
-    // include BOTH gallery buttons and mid videos
+    // include gallery buttons + mid videos + mid-open overlay
     const items = Array.from(document.querySelectorAll("[data-src][data-gallery]"));
     const galleries = new Map();
 
@@ -435,27 +454,58 @@
       return s.endsWith(".mp4") || s.endsWith(".webm");
     }
 
-    function showMedia(src, label){
-      if (isVideoSrc(src)) {
-        // show video
-        lbImg.style.display = "none";
-        lbImg.src = "";
+    function isVimeo(src){
+      return (src || "").startsWith("vimeo:");
+    }
 
+    function vimeoUrlFromSrc(src){
+      const id = src.replace("vimeo:", "").trim();
+      return `https://player.vimeo.com/video/${id}?badge=0&autopause=0&autoplay=1&loop=1&muted=1`;
+    }
+
+    function updateNav(){
+      const arr = galleries.get(currentGallery) || [];
+      const show = arr.length > 1;
+      lbPrev.style.display = show ? "grid" : "none";
+      lbNext.style.display = show ? "grid" : "none";
+    }
+
+    function resetMedia(){
+      // image
+      lbImg.style.display = "none";
+      lbImg.src = "";
+
+      // video
+      lbVid.pause();
+      lbVid.style.display = "none";
+      lbVid.src = "";
+
+      // vimeo
+      lbFrame.style.display = "none";
+      lbFrame.src = "";
+    }
+
+    function showMedia(src, label){
+      resetMedia();
+
+      if (isVimeo(src)) {
+        lbFrame.style.display = "block";
+        lbFrame.src = vimeoUrlFromSrc(src);
+        lbFrame.setAttribute("title", label || "Vimeo video");
+        return;
+      }
+
+      if (isVideoSrc(src)) {
         lbVid.style.display = "block";
         lbVid.src = src;
-        lbVid.muted = true; // autoplay policy
-        lbVid.play().catch(()=>{});
         lbVid.setAttribute("aria-label", label || "Video");
-      } else {
-        // show image
-        lbVid.pause();
-        lbVid.style.display = "none";
-        lbVid.src = "";
-
-        lbImg.style.display = "block";
-        lbImg.src = src;
-        lbImg.alt = label || "Image";
+        lbVid.play().catch(()=>{});
+        return;
       }
+
+      lbImg.style.display = "block";
+      lbImg.src = src;
+      lbImg.alt = label || "Image";
     }
 
     function openLightbox(galleryKey, index){
@@ -477,19 +527,15 @@
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.classList.add("lb-open");
+
+      updateNav(); // ✅ hides arrows for single-item galleries (mid videos)
     }
 
     function closeLightbox(){
       lightbox.classList.remove("open");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.classList.remove("lb-open");
-
-      lbVid.pause();
-      lbVid.src = "";
-      lbVid.style.display = "none";
-
-      lbImg.src = "";
-      lbImg.style.display = "none";
+      resetMedia();
     }
 
     function go(delta){
@@ -506,6 +552,7 @@
         "Media";
 
       showMedia(src, label);
+      updateNav();
     }
 
     items.forEach((el) => {
