@@ -396,7 +396,7 @@ body {
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,.45);
+  background: rgba(0,0,0,.35);
   pointer-events:none;
   z-index: 0;
 }
