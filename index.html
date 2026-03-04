@@ -133,18 +133,23 @@
         </div>
 
         <div class="project-mid">
-          <!-- ✅ WORK 1: VIMEO INLINE + opens in lightbox on click -->
-          <div class="mid-visual vimeo-mid">
-            <div class="vimeo">
-              <iframe
-                src="https://player.vimeo.com/video/1169865397?badge=0&autopause=0&autoplay=1&loop=1&muted=1"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                title="Immersive Real Estate Experience for Primula Costruzioni">
-              </iframe>
-            </div>
+          <!-- ✅ WORK 1: LOCAL MP4 INLINE + opens in lightbox on click -->
+          <div class="mid-visual"
+               role="button" tabindex="0"
+               data-gallery="work-1-final"
+               data-src="assets/video/work-1-final.mp4"
+               data-label="Work 1 • Final video">
+        
+            <!-- UPLOAD VIDEO HERE: assets/video/work-1-final.mp4 -->
+            <video class="mid-video" autoplay muted loop playsinline preload="metadata">
+              <source src="assets/video/work-1-final.mp4" type="video/mp4">
+            </video>
+          </div>
+        
+          <div class="features">
+            ...
+          </div>
+        </div>
 
             <!-- Click overlay (this is what opens the lightbox) -->
             <button class="mid-open"
