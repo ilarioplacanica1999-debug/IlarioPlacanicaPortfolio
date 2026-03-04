@@ -388,7 +388,7 @@ body {
     radial-gradient(700px 520px at 12% 12%, rgba(255,170,110,.35), rgba(255,170,110,0) 55%),
     radial-gradient(700px 520px at 72% 18%, rgba(0,0,0,.55), rgba(0,0,0,0) 65%),
     linear-gradient(135deg, #ff6a2a 0%, #ff3a2e 40%, #3a0b1e 100%);
-  position: relative; /* needed for overlay */
+  position: relative;
 }
 
 /* Dark overlay to improve text readability */
@@ -396,7 +396,7 @@ body {
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,.45); /* ✅ change 0.35 -> 0.25 lighter / 0.45 darker */
+  background: rgba(0,0,0,.45);
   pointer-events:none;
   z-index: 0;
 }
@@ -421,8 +421,6 @@ body {
   flex-wrap: wrap;
   margin-top: 12px;
 }
-
-/* square box */
 .stat{
   width: 64px;
   height: 64px;
@@ -430,24 +428,17 @@ body {
   background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
   border: 1px solid rgba(255,255,255,.10);
   box-shadow: 0 10px 26px rgba(0,0,0,.28);
-
   display:grid;
   place-items:center;
   padding: 10px;
 }
-
-/* bigger icon */
 .tool-icon{
   width: 44px;
   height: 44px;
   object-fit: contain;
   filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));
 }
-
-/* hide the text if it exists */
-.tool-name{
-  display:none;
-}
+.tool-name{ display:none; }
 
 .project-media{
   border-radius: 22px;
@@ -572,19 +563,46 @@ body {
   font-size: 11px;
 }
 
-/* ✅ GALLERY bigger */
 .catalog-grid{
   display:grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
+
+/* ✅ GALLERY ITEM (NO CROP + HOVER + CLICK) */
 .catalog-item{
   height: 240px;
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.25);
+  background-color: rgba(0,0,0,.25);
   overflow:hidden;
   position: relative;
+
+  /* no crop */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* hover like previews */
+  transition: transform .25s ease, box-shadow .25s ease;
+  transform: translateZ(0);
+  cursor: pointer;
+
+  /* button reset */
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.catalog-item:hover{
+  transform: scale(1.05);
+  box-shadow: 0 18px 45px rgba(0,0,0,.45);
+  z-index: 2;
+}
+
+.catalog-item:focus-visible{
+  outline: 2px solid rgba(255,90,31,.85);
+  outline-offset: 3px;
 }
 
 .catalog-item::after{
@@ -696,8 +714,86 @@ body {
   max-width: 46ch;
 }
 
+/* =========================
+   LIGHTBOX
+   ========================= */
+body.lb-open{ overflow: hidden; }
+
+.lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(0,0,0,.78);
+  z-index: 9999;
+}
+.lightbox.open{ display: flex; }
+
+.lightbox-inner{
+  width: min(1100px, 94vw);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(12,12,13,.88);
+  box-shadow: 0 30px 90px rgba(0,0,0,.65);
+  padding: 16px;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+.lightbox img{
+  width: 100%;
+  height: min(78vh, 740px);
+  object-fit: contain;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.25);
+}
+
+.lb-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+.lb-btn:hover{ background: rgba(255,255,255,.16); }
+
+.lb-prev{ left: 14px; }
+.lb-next{ right: 14px; }
+
+.lb-close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+.lb-close:hover{ background: rgba(255,255,255,.16); }
+
+.lb-btn svg, .lb-close svg{
+  width: 18px;
+  height: 18px;
+}
+
 @media (hover: none){
   .work:hover{ transform: none; }
+  .catalog-item:hover{ transform: none; }
 }
 
 @media (max-width: 980px){
