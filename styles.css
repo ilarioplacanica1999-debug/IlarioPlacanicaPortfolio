@@ -460,7 +460,7 @@ body {
 .project-media.bg2{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
 .project-media.bg3{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
 
-/* ✅ MID SECTION now for VIDEO (bigger + clickable) */
+/* ✅ MID SECTION */
 .project-mid{
   margin-top: 18px;
   display:grid;
@@ -481,47 +481,33 @@ body {
   cursor: pointer;
 }
 
+/* base mid video */
 .mid-visual .mid-video{
   width: 100%;
   height: 100%;
-  min-height: 420px;
-  object-fit: cover;        /* cambia in contain se vuoi zero crop */
+  object-fit: cover;
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,.10);
   display:block;
   background: rgba(0,0,0,.25);
-  pointer-events: none;     /* click apre lightbox */
-}
-/* =========================
-   WORK 1 Vimeo inside mid-visual
-   ========================= */
-.mid-visual.vimeo-mid{
-  cursor: pointer;
+  pointer-events: none;
 }
 
-.vimeo{
-  width: 100%;
-  height: 100%;
-  min-height: 388px; /* 420 - padding(16*2) */
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.25);
-  position: relative;
+/* ✅ FIX: Work 1 + Work 3 mid devono avere altezza stabile (NON tocca Work 2) */
+#work-1 .mid-visual,
+#work-3 .mid-visual{
+  height: 420px;       /* 🔥 blocca l’altezza: non spinge giù la pagina */
+  min-height: 420px;
 }
 
-/* iframe full size */
-.vimeo iframe{
-  position: absolute;
-  inset: 0;
-  width: 100%;
+#work-1 .mid-visual .mid-video,
+#work-3 .mid-visual .mid-video{
   height: 100%;
-  display: block;
-  pointer-events: none; /* click passa al bottone overlay (apre lightbox) */
+  min-height: 0;       /* evita “esplosioni” su video grandi */
 }
 
 /* =========================
-   WORK 2: video verticale (telefono)
+   WORK 2: video verticale (telefono) — NON CAMBIATO
    ========================= */
 #work-2 .mid-visual{
   display: flex;
@@ -530,22 +516,17 @@ body {
 }
 
 #work-2 .mid-visual .mid-video{
-  /* mostra tutto il video senza crop */
   object-fit: contain;
-
-  /* lo rende “telefono” e non gigante */
   width: auto;
   height: 100%;
   max-width: clamp(240px, 22vw, 260px);
-
-  /* opzionale: evita che tocchi i bordi */
   margin: 0 auto;
 }
 
 /* button overlay used to open lightbox */
 .mid-open{
   position: absolute;
-  inset: 16px;          /* dentro il padding della mid-visual */
+  inset: 16px;
   border: 0;
   background: transparent;
   border-radius: 16px;
@@ -557,11 +538,7 @@ body {
   outline-offset: 3px;
 }
 
-@media (max-width: 980px){
-  .vimeo{ min-height: 288px; } /* 320 - padding(16*2) */
-}
-
-/* (lasciamo queste, non danno fastidio se un giorno usi img) */
+/* (se un giorno usi img nel mid) */
 .mid-visual img{
   width: 100%;
   height: 100%;
@@ -818,13 +795,12 @@ body.lb-open{ overflow: hidden; }
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(12,12,13,.88);
   box-shadow: 0 30px 90px rgba(0,0,0,.65);
-  padding: 18px 92px;     /* spazio laterale per frecce */
+  padding: 18px 92px;
   position: relative;
   backdrop-filter: blur(10px);
   overflow: visible;
 }
 
-/* prima avevi solo img, video */
 .lightbox img,
 .lightbox video,
 .lightbox iframe{
@@ -841,11 +817,6 @@ body.lb-open{ overflow: hidden; }
 #lbFrame.is-tour{
   height: min(88vh, 940px);
   background: #000;
-}
-
-/* (opzionale) Vimeo iframe */
-#lbFrame.is-vimeo{
-  height: min(86vh, 900px);
 }
 
 /* arrows */
@@ -900,8 +871,14 @@ body.lb-open{ overflow: hidden; }
 @media (max-width: 980px){
   .project-hero{ grid-template-columns: 1fr; }
   .project-mid{ grid-template-columns: 1fr; }
+
   .mid-visual{ min-height: 320px; }
-  .mid-visual .mid-video{ min-height: 320px; }
+  #work-1 .mid-visual,
+  #work-3 .mid-visual{
+    height: 320px;
+    min-height: 320px;
+  }
+
   .catalog-grid{ grid-template-columns: repeat(2, 1fr); }
   .pay-grid{ grid-template-columns: repeat(2, 1fr); }
   .steps-grid{ grid-template-columns: 1fr; }
