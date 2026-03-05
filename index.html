@@ -72,36 +72,44 @@
             <h2>My<br/>Projects:<br/></h2>
           </div>
 
-          <!-- ✅ CONTACTS (replaces paragraph + mini) -->
+          <!-- ✅ CONTATTI (bianchi) -->
           <div class="content-right">
             <div class="contacts">
               <div class="contact-name">Ilario Placanica</div>
               <a class="contact-item" href="tel:+393483216319">3483216319</a>
               <a class="contact-item" href="mailto:ilario.placanica1999@gmail.com">ilario.placanica1999@gmail.com</a>
-              <a class="contact-item" href="https://www.linkedin.com/in/INSERT-YOUR-LINKEDIN" target="_blank" rel="noopener">
-                LinkedIn
-              </a>
+              <!-- cambia # con il tuo link Linkedin -->
+              <a class="contact-item" href="#" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>
         </div>
 
         <div class="works" id="projects">
 
-          <!-- ✅ TAGS + CTA aligned above Character Animation -->
+          <!-- ✅ BARRE CATEGORIE (come prima) + CTA allineata sulla riga “CHARACTER ANIMATION” -->
           <div class="work-tags">
-            <div class="work-tag arch" data-label="Architecture"></div>
+            <!-- sinistra: Architecture -->
+            <div class="work-tag-group">
+              <div class="work-tag-label">ARCHITECTURE</div>
+              <div class="work-tag arch"></div>
+            </div>
 
-            <div class="work-tag-right">
-              <a class="cta works-cta" href="mailto:ilario.placanica1999@gmail.com?subject=Portfolio%20contact&body=Hi%20Ilario,%0A%0A">
-                Get in touch
-                <span class="dot" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </a>
+            <!-- destra: Character Animation + bottone -->
+            <div class="work-tag-group right">
+              <div class="work-tag-head">
+                <div class="work-tag-label">CHARACTER ANIMATION</div>
 
-              <div class="work-tag char" data-label="Character Animation"></div>
+                <a class="cta works-cta"
+                   href="mailto:ilario.placanica1999@gmail.com?subject=Portfolio%20contact&body=Hi%20Ilario,%0A%0A">
+                  Get in touch
+                  <span class="dot" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <div class="work-tag char"></div>
             </div>
           </div>
 
@@ -145,12 +153,13 @@
         </div>
 
         <div class="project-mid">
-          <!-- ✅ WORK 1: local mp4 (click opens lightbox) -->
+          <!-- ✅ WORK 1: SOLO MP4 (niente vimeo) -->
           <div class="mid-visual"
                role="button" tabindex="0"
                data-gallery="work-1-final"
                data-src="assets/video/work-1-final.mp4"
                data-label="Work 1 • Final video">
+
             <video class="mid-video" autoplay muted loop playsinline preload="metadata">
               <source src="assets/video/work-1-final.mp4" type="video/mp4">
             </video>
@@ -188,7 +197,7 @@
               <div class="label">Shot 03 <span>alt camera</span></div>
             </button>
 
-            <!-- ✅ FIXED: gallery + label for Work 1 -->
+            <!-- ✅ se è un video di work-1, deve stare in work-1 -->
             <button class="catalog-item" type="button"
                     data-gallery="work-1"
                     data-src="assets/video/work-1-gallery-4.mp4"
