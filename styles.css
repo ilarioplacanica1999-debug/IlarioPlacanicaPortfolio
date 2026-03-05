@@ -311,6 +311,57 @@ body {
   gap: 16px;
 }
 
+.works{
+  margin-top: 22px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  position: relative; /* ✅ unito qui (prima era in un secondo .works{}) */
+}
+
+/* =========================
+   WORKS CATEGORY BARS (2 + 1)
+   ========================= */
+.work-tags{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 2 preview + 1 preview */
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.work-tag{
+  height: 34px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+  backdrop-filter: blur(10px);
+}
+
+.work-tag.arch{
+  background: linear-gradient(90deg, rgba(47,217,255,.35), rgba(43,107,255,.35));
+}
+
+.work-tag.char{
+  background: linear-gradient(90deg, rgba(255,79,216,.35), rgba(123,60,255,.35));
+}
+
+/* responsive: quando le preview diventano 1 colonna, le barre diventano 2 righe */
+@media (max-width: 860px){
+  .work-tags{
+    grid-template-columns: 1fr;
+    margin-bottom: 14px;
+  }
+}
+
 .work{
   display:block;
   text-decoration:none;
