@@ -72,33 +72,39 @@
             <h2>My<br/>Projects:<br/></h2>
           </div>
 
+          <!-- ✅ CONTACTS (replaces paragraph + mini) -->
           <div class="content-right">
-            <p>
-              I’m a visual designer focused on building clean, intuitive visuals
-              that solve real-world problems.
-            </p>
-            <div class="mini">
-              Let’s build something<br/>meaningful together.
+            <div class="contacts">
+              <div class="contact-name">Ilario Placanica</div>
+              <a class="contact-item" href="tel:+393483216319">3483216319</a>
+              <a class="contact-item" href="mailto:ilario.placanica1999@gmail.com">ilario.placanica1999@gmail.com</a>
+              <a class="contact-item" href="https://www.linkedin.com/in/INSERT-YOUR-LINKEDIN" target="_blank" rel="noopener">
+                LinkedIn
+              </a>
             </div>
-
-            <a class="cta" href="mailto:ilario.placanica1999@gmail.com?subject=Portfolio%20contact&body=Hi%20Ilario,%0A%0A">
-              Get in touch
-              <span class="dot" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </a>
           </div>
         </div>
 
         <div class="works" id="projects">
-        
+
+          <!-- ✅ TAGS + CTA aligned above Character Animation -->
           <div class="work-tags">
             <div class="work-tag arch" data-label="Architecture"></div>
-            <div class="work-tag char" data-label="Character Animation"></div>
+
+            <div class="work-tag-right">
+              <a class="cta works-cta" href="mailto:ilario.placanica1999@gmail.com?subject=Portfolio%20contact&body=Hi%20Ilario,%0A%0A">
+                Get in touch
+                <span class="dot" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+
+              <div class="work-tag char" data-label="Character Animation"></div>
+            </div>
           </div>
-        
+
           <a class="work one" href="#work-1" aria-label="Work 1"></a>
           <a class="work two" href="#work-2" aria-label="Work 2"></a>
           <a class="work three" href="#work-3" aria-label="Work 3"></a>
@@ -145,13 +151,9 @@
                data-gallery="work-1-final"
                data-src="assets/video/work-1-final.mp4"
                data-label="Work 1 • Final video">
-
             <video class="mid-video" autoplay muted loop playsinline preload="metadata">
               <source src="assets/video/work-1-final.mp4" type="video/mp4">
             </video>
-
-            <!-- overlay (keeps clicks clean; NO data-src here to avoid duplicate items) -->
-            <button class="mid-open" type="button" aria-label="Open Work 1 video"></button>
           </div>
 
           <div class="features">
@@ -186,10 +188,11 @@
               <div class="label">Shot 03 <span>alt camera</span></div>
             </button>
 
+            <!-- ✅ FIXED: gallery + label for Work 1 -->
             <button class="catalog-item" type="button"
-                    data-gallery="work-2"
+                    data-gallery="work-1"
                     data-src="assets/video/work-1-gallery-4.mp4"
-                    data-label="Work 2 • Video"
+                    data-label="Work 1 • Video"
                     style="background-image:url('assets/img/work-1-gallery-4.jpg');">
               <div class="label">Video <span>preview</span></div>
             </button>
@@ -247,7 +250,6 @@
         </div>
 
         <div class="project-mid">
-          <!-- ✅ WORK 2: local mp4 (click opens lightbox, no arrows because single item) -->
           <div class="mid-visual"
                role="button" tabindex="0"
                data-gallery="work-2-final"
@@ -272,7 +274,6 @@
           </div>
 
           <div class="catalog-grid">
-            <!-- ✅ FIRST ITEM = MARZIPANO TOUR (opens in lightbox) -->
             <button class="catalog-item" type="button"
                     data-gallery="work-2"
                     data-src="tour:assets/tour/work-2/index.html"
@@ -342,7 +343,6 @@
         </div>
 
         <div class="project-mid">
-          <!-- ✅ WORK 3: local mp4 (click opens lightbox, no arrows because single item) -->
           <div class="mid-visual"
                role="button" tabindex="0"
                data-gallery="work-3-final"
