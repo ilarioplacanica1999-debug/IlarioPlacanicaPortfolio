@@ -349,9 +349,9 @@ body {
   white-space: nowrap;
 }
 
-/* ✅ ARCH = verde */
+/* ✅ ARCH = Arancione/rosso */
 .work-tag.arch{
-  background: linear-gradient(135deg, rgba(255,106,42,.45), rgba(255,58,46,.45), rgba(58,11,30,.45));
+  background: linear-gradient(135deg, rgba(255,106,42,.75), rgba(255,58,46,.75));
 }
 
 /* ✅ CHAR = viola/rosa */
