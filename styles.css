@@ -460,12 +460,12 @@ body {
 .project-media.bg2{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
 .project-media.bg3{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
 
-/* ✅ MID SECTION */
+/* ✅ MID SECTION (PROPORZIONI RIPRISTINATE) */
 .project-mid{
   margin-top: 18px;
   display:grid;
-  grid-template-columns: 1.35fr .75fr;
-  gap: 18px;
+  grid-template-columns: 1.1fr .9fr;  /* ✅ come “prima”, stessa larghezza tra tutti i work */
+  gap: 16px;                          /* ✅ come originale */
   align-items: start;
 }
 
@@ -481,10 +481,10 @@ body {
   cursor: pointer;
 }
 
-/* base mid video */
 .mid-visual .mid-video{
   width: 100%;
   height: 100%;
+  min-height: 420px;
   object-fit: cover;
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,.10);
@@ -493,21 +493,8 @@ body {
   pointer-events: none;
 }
 
-/* ✅ FIX: Work 1 + Work 3 mid devono avere altezza stabile (NON tocca Work 2) */
-#work-1 .mid-visual,
-#work-3 .mid-visual{
-  height: 420px;       /* 🔥 blocca l’altezza: non spinge giù la pagina */
-  min-height: 420px;
-}
-
-#work-1 .mid-visual .mid-video,
-#work-3 .mid-visual .mid-video{
-  height: 100%;
-  min-height: 0;       /* evita “esplosioni” su video grandi */
-}
-
 /* =========================
-   WORK 2: video verticale (telefono) — NON CAMBIATO
+   WORK 2: video verticale (telefono) — NON TOCCATO
    ========================= */
 #work-2 .mid-visual{
   display: flex;
@@ -871,14 +858,8 @@ body.lb-open{ overflow: hidden; }
 @media (max-width: 980px){
   .project-hero{ grid-template-columns: 1fr; }
   .project-mid{ grid-template-columns: 1fr; }
-
   .mid-visual{ min-height: 320px; }
-  #work-1 .mid-visual,
-  #work-3 .mid-visual{
-    height: 320px;
-    min-height: 320px;
-  }
-
+  .mid-visual .mid-video{ min-height: 320px; }
   .catalog-grid{ grid-template-columns: repeat(2, 1fr); }
   .pay-grid{ grid-template-columns: repeat(2, 1fr); }
   .steps-grid{ grid-template-columns: 1fr; }
