@@ -210,6 +210,7 @@ body{
   font-size: clamp(44px, 5.8vw, 66px);
   line-height: .92;
   letter-spacing: -.6px;
+  color: rgba(0,0,0,.65); /* ✅ grigio scuro */
 }
 
 .hero-right{
