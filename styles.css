@@ -288,7 +288,7 @@ body{
 
 .content-grid{
   display:grid;
-  grid-template-columns: 1.25fr .9fr;
+  grid-template-columns: 2fr 1fr; /* ✅ uguale a .work-tags */
   gap: 18px;
   align-items: start;
   padding-bottom: 14px;
@@ -310,8 +310,8 @@ body{
 
 /* contatti più in alto */
 .content-right{
-  justify-self: end;
-  max-width: 360px;
+  justify-self: stretch;  /* ✅ non più “appiccicato” a destra */
+  max-width: none;        /* ✅ usa tutta la colonna */
   padding-top: 2px;
 }
 
@@ -322,8 +322,8 @@ body{
   display:flex;
   flex-direction: column;
   gap: 8px;
-  align-items: flex-start;
-  text-align: left;
+  align-items: flex-start; /* ✅ sinistra */
+  text-align: left;        /* ✅ sinistra */
 }
 
 .contact-name{
