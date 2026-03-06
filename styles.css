@@ -322,8 +322,8 @@ body{
   display:flex;
   flex-direction: column;
   gap: 8px;
-  align-items: flex-end;
-  text-align: right;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .contact-name{
@@ -390,8 +390,8 @@ body{
 .work-tag-head{
   width: 100%;
   display:flex;
-  flex-direction: column-reverse; /* ✅ CTA sopra la label senza toccare l'HTML */
-  align-items: flex-end;          /* ✅ allineato a destra col bordo barra */
+  flex-direction: column-reverse; /* CTA sopra la label */
+  align-items: flex-end;          /* CTA a destra (fine barra) */
   gap: 10px;
 }
 
@@ -405,9 +405,10 @@ body{
   white-space: nowrap;
 }
 
-/* label destra: testo a destra */
+/* ✅ label destra: parte da sinistra come ARCHITECTURE */
 .work-tag-group.right .work-tag-label{
-  text-align: right;
+  width: 100%;
+  text-align: left; /* <-- questa è la differenza */
 }
 
 /* CTA: sopra, attaccato a destra */
