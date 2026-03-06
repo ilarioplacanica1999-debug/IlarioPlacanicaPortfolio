@@ -104,10 +104,11 @@ body{
   position: relative;
   padding: 22px 22px 18px;
 
+  /* più chiaro, sempre b/n */
   background:
-    radial-gradient(700px 520px at 12% 12%, rgba(255,255,255,.18), rgba(255,255,255,0) 56%),
-    radial-gradient(700px 520px at 72% 18%, rgba(0,0,0,.72), rgba(0,0,0,0) 66%),
-    linear-gradient(135deg, #1d1d1f 0%, #0b0b0c 55%, #000 100%);
+    radial-gradient(900px 620px at 14% 10%, rgba(255,255,255,.24), rgba(255,255,255,0) 58%),
+    radial-gradient(900px 620px at 78% 18%, rgba(255,255,255,.14), rgba(255,255,255,0) 62%),
+    linear-gradient(135deg, #2b2b2f 0%, #141416 58%, #070708 100%);
 }
 
 .hero::after{
@@ -118,11 +119,21 @@ body{
   background-size: cover;
   background-position: center right;
 
-  /* ✅ hero image più “elegante”: b/n */
+  /* immagine elegante ma non “sporca” */
   filter: grayscale(1) contrast(1.05);
-  opacity: .22;
-  mix-blend-mode: soft-light;
+  opacity: .20;                 /* meno invadente */
+  mix-blend-mode: soft-light;   /* mantiene chiaro */
   pointer-events: none;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  /* overlay più soft: leggibile ma non scurisce troppo */
+  background: linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.08));
+  pointer-events:none;
+  z-index: 0;
 }
 
 .hero > *{ position: relative; z-index: 1; }
@@ -526,10 +537,13 @@ body{
 
 /* ✅ accent projects (work 1 + work 3) in grayscale */
 .project.project-accent{
+  /* accent più chiaro (b/n) */
   background:
-    radial-gradient(700px 520px at 12% 12%, rgba(255,255,255,.14), rgba(255,255,255,0) 56%),
-    radial-gradient(700px 520px at 72% 18%, rgba(0,0,0,.72), rgba(0,0,0,0) 66%),
-    linear-gradient(135deg, #1c1c1e 0%, #0a0a0b 55%, #000 100%);
+    radial-gradient(900px 620px at 12% 12%, rgba(255,255,255,.18), rgba(255,255,255,0) 58%),
+    radial-gradient(900px 620px at 78% 18%, rgba(255,255,255,.10), rgba(255,255,255,0) 62%),
+    linear-gradient(135deg, #2a2a2d 0%, #141416 58%, #080809 100%);
+
+  border-top: 1px solid rgba(255,255,255,.12); /* coerente col divider */
   position: relative;
 }
 
@@ -538,7 +552,7 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,.30);
+  background: rgba(0,0,0,.18); /* prima era più scuro */
   pointer-events:none;
   z-index: 0;
 }
