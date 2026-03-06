@@ -374,7 +374,7 @@ body{
 .work-tags{
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-bottom: 12px;
   align-items: end;
@@ -476,7 +476,7 @@ body{
   display:block;
   text-decoration:none;
   color: inherit;
-  height: 210px;
+  height: 280px;
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
   border: none;
@@ -628,6 +628,7 @@ body{
 .project-media.bg1{ background-image: url("assets/img/work-1.JPG"); background-size: cover; background-position: center; }
 .project-media.bg2{ background-image: url("assets/img/work-2.jpg"); background-size: cover; background-position: center; }
 .project-media.bg3{ background-image: url("assets/img/work-3.jpg"); background-size: cover; background-position: center; }
+.project-media.bg3{ background-image: url("assets/img/work-4.jpg"); background-size: cover; background-position: center; }
 
 /* Allinea MID a HERO */
 .project-mid{
