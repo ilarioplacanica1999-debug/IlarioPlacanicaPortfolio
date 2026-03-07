@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ILARIO PLACANICA</title>
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -22,7 +21,7 @@
   <div class="wrap">
     <main class="card">
 
-      <section class="hero">
+      <section class="hero" id="home">
         <div class="hero-topbar">
           <div class="brand">Ilario</div>
           <div class="hero-nav">
@@ -32,7 +31,7 @@
           </div>
         </div>
 
-        <div class="hero-grid" id="home">
+        <div class="hero-grid">
           <div class="hero-left">
             <h2>3D<br/>Visualizer</h2>
           </div>
@@ -45,7 +44,6 @@
             </p>
           </div>
         </div>
-
       </section>
 
       <section class="strip">
@@ -63,29 +61,23 @@
             <h2>Explore<br/>My<br/>Projects:<br/></h2>
           </div>
 
-          <!-- ✅ CONTATTI (bianchi) -->
           <div class="content-right">
             <div class="contacts">
               <div class="contact-name">Ilario Placanica</div>
               <a class="contact-item" href="tel:+39 3483216319">+39 3483216319</a>
               <a class="contact-item" href="mailto:ilario.placanica1999@gmail.com">ilario.placanica1999@gmail.com</a>
-              <!-- cambia # con il tuo link Linkedin -->
               <a class="contact-item" href="https://www.linkedin.com/in/ilario-placanica-0055a2383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>
         </div>
 
         <div class="works" id="projects">
-
-          <!-- ✅ BARRE CATEGORIE (come prima) + CTA allineata sulla riga “CHARACTER ANIMATION” -->
           <div class="work-tags">
-            <!-- sinistra: Architecture -->
             <div class="work-tag-group">
               <div class="work-tag-label">ARCHITECTURE</div>
               <div class="work-tag arch"></div>
             </div>
 
-            <!-- destra: Character Animation + bottone -->
             <div class="work-tag-group right">
               <div class="work-tag-head">
                 <div class="work-tag-label">CHARACTER ANIMATION</div>
@@ -111,7 +103,6 @@
         </div>
       </section>
 
-      <!-- WORK 1 -->
       <section class="project project-accent" id="work-1">
         <div class="project-hero">
           <div>
@@ -145,17 +136,17 @@
         </div>
 
         <div class="project-mid">
-          <!-- ✅ WORK 1: SOLO MP4 (niente vimeo) -->
-          <div class="mid-visual"
-               role="button" tabindex="0"
-               data-gallery="work-1-final"
-               data-src="assets/video/work-1-final.mp4"
-               data-label="Work 1 • Final video">
+          <button class="mid-visual"
+                  type="button"
+                  data-gallery="work-1-final"
+                  data-src="assets/video/work-1-final.mp4"
+                  data-label="Work 1 • Final video"
+                  aria-label="Open Work 1 final video">
 
             <video class="mid-video" autoplay muted loop playsinline preload="metadata">
               <source src="assets/video/work-1-final.mp4" type="video/mp4">
             </video>
-          </div>
+          </button>
 
           <div class="features">
             <div class="feature"><div class="f-ico">A</div><div><h4>High fidelity</h4><p>Materiali, lighting e post coerenti con il mood del progetto.</p></div></div>
@@ -189,7 +180,6 @@
               <div class="label">Widget Blueprint <span>Unreal Enine</span></div>
             </button>
 
-            <!-- ✅ se è un video di work-1, deve stare in work-1 -->
             <button class="catalog-item" type="button"
                     data-gallery="work-1"
                     data-src="assets/video/work-1-gallery-4.mp4"
@@ -210,7 +200,6 @@
         </div>
       </section>
 
-      <!-- WORK 2 -->
       <section class="project" id="work-2">
         <div class="project-hero">
           <div>
@@ -241,15 +230,16 @@
         </div>
 
         <div class="project-mid">
-          <div class="mid-visual"
-               role="button" tabindex="0"
-               data-gallery="work-2-final"
-               data-src="assets/video/work-2-final.mp4"
-               data-label="Work 2 • Final video">
+          <button class="mid-visual"
+                  type="button"
+                  data-gallery="work-2-final"
+                  data-src="assets/video/work-2-final.mp4"
+                  data-label="Work 2 • Final video"
+                  aria-label="Open Work 2 final video">
             <video class="mid-video" autoplay muted loop playsinline preload="metadata">
               <source src="assets/video/work-2-final.mp4" type="video/mp4">
             </video>
-          </div>
+          </button>
 
           <div class="features">
             <div class="feature"><div class="f-ico">A</div><div><h4>Detail</h4><p>Descrizione feature 1.</p></div></div>
@@ -303,7 +293,6 @@
         </div>
       </section>
 
-      <!-- WORK 3 -->
       <section class="project project-accent" id="work-3">
         <div class="project-hero">
           <div>
@@ -334,15 +323,16 @@
         </div>
 
         <div class="project-mid">
-          <div class="mid-visual"
-               role="button" tabindex="0"
-               data-gallery="work-3-final"
-               data-src="assets/video/work-3-final.mp4"
-               data-label="Work 3 • Final video">
+          <button class="mid-visual"
+                  type="button"
+                  data-gallery="work-3-final"
+                  data-src="assets/video/work-3-final.mp4"
+                  data-label="Work 3 • Final video"
+                  aria-label="Open Work 3 final video">
             <video class="mid-video" autoplay muted loop playsinline preload="metadata">
               <source src="assets/video/work-3-final.mp4" type="video/mp4">
             </video>
-          </div>
+          </button>
 
           <div class="features">
             <div class="feature"><div class="f-ico">A</div><div><h4>Composition</h4><p>Descrizione feature 1.</p></div></div>
@@ -390,7 +380,6 @@
         </div>
       </section>
 
-            <!-- WORK 4 -->
       <section class="project" id="work-4">
         <div class="project-hero">
           <div>
@@ -421,13 +410,14 @@
         </div>
 
         <div class="project-mid">
-          <div class="mid-visual"
-               role="button" tabindex="0"
-               data-gallery="work-4"
-               data-src="assets/img/work-4-mid.jpg"
-               data-label="Work 4 • Preview"
-               style="background-image:url('assets/img/work-4-mid.jpg'); background-size:cover; background-position:center;">
-          </div>
+          <button class="mid-visual"
+                  type="button"
+                  data-gallery="work-4"
+                  data-src="assets/img/work-4-mid.jpg"
+                  data-label="Work 4 • Preview"
+                  aria-label="Open Work 4 preview"
+                  style="background-image:url('assets/img/work-4-mid.jpg'); background-size:cover; background-position:center;">
+          </button>
 
           <div class="features">
             <div class="feature"><div class="f-ico">A</div><div><h4>Composition</h4><p>Descrizione feature 1.</p></div></div>
@@ -475,11 +465,9 @@
         </div>
       </section>
 
-
     </main>
   </div>
 
-  <!-- LIGHTBOX (one time only) -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Media viewer">
       <button class="lb-close" type="button" id="lbClose" aria-label="Close">
@@ -510,159 +498,6 @@
     </div>
   </div>
 
-  <script>
-    const lightbox = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lbImg");
-    const lbVid = document.getElementById("lbVid");
-    const lbFrame = document.getElementById("lbFrame");
-    const lbClose = document.getElementById("lbClose");
-    const lbPrev = document.getElementById("lbPrev");
-    const lbNext = document.getElementById("lbNext");
-
-    const items = Array.from(document.querySelectorAll("[data-src][data-gallery]"));
-    const galleries = new Map();
-
-    items.forEach((el) => {
-      const g = el.dataset.gallery || "default";
-      if (!galleries.has(g)) galleries.set(g, []);
-      galleries.get(g).push(el);
-    });
-
-    let currentGallery = null;
-    let currentIndex = 0;
-
-    function isVideoSrc(src){
-      const s = (src || "").toLowerCase();
-      return s.endsWith(".mp4") || s.endsWith(".webm");
-    }
-    function isTour(src){
-      return (src || "").startsWith("tour:");
-    }
-
-    function tourUrlFromSrc(src){
-      return src.replace("tour:", "").trim();
-    }
-
-    function updateNav(){
-      const arr = galleries.get(currentGallery) || [];
-      const show = arr.length > 1;
-      lbPrev.style.display = show ? "grid" : "none";
-      lbNext.style.display = show ? "grid" : "none";
-    }
-
-    function resetMedia(){
-      lbImg.style.display = "none";
-      lbImg.src = "";
-
-      lbVid.pause();
-      lbVid.style.display = "none";
-      lbVid.src = "";
-
-      lbFrame.classList.remove("is-tour");
-      lbFrame.style.display = "none";
-      lbFrame.src = "";
-    }
-
-    function showMedia(src, label){
-      resetMedia();
-
-      if (isTour(src)) {
-        lbFrame.style.display = "block";
-        lbFrame.classList.add("is-tour");
-        lbFrame.src = tourUrlFromSrc(src);
-        lbFrame.setAttribute("title", label || "360 Tour");
-        return;
-      }
-
-      if (isVideoSrc(src)) {
-        lbVid.style.display = "block";
-        lbVid.src = src;
-        lbVid.setAttribute("aria-label", label || "Video");
-        lbVid.play().catch(()=>{});
-        return;
-      }
-
-      lbImg.style.display = "block";
-      lbImg.src = src;
-      lbImg.alt = label || "Image";
-    }
-
-    function openLightbox(galleryKey, index){
-      currentGallery = galleryKey;
-      currentIndex = index;
-
-      const arr = galleries.get(currentGallery) || [];
-      const el = arr[currentIndex];
-      if (!el) return;
-
-      const src = el.dataset.src;
-      const label =
-        el.dataset.label ||
-        el.querySelector(".label")?.textContent?.trim() ||
-        "Media";
-
-      showMedia(src, label);
-
-      lightbox.classList.add("open");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.classList.add("lb-open");
-      updateNav();
-    }
-
-    function closeLightbox(){
-      lightbox.classList.remove("open");
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("lb-open");
-      resetMedia();
-    }
-
-    function go(delta){
-      const arr = galleries.get(currentGallery) || [];
-      if (!arr.length) return;
-
-      currentIndex = (currentIndex + delta + arr.length) % arr.length;
-      const el = arr[currentIndex];
-
-      const src = el.dataset.src;
-      const label =
-        el.dataset.label ||
-        el.querySelector(".label")?.textContent?.trim() ||
-        "Media";
-
-      showMedia(src, label);
-      updateNav();
-    }
-
-    items.forEach((el) => {
-      el.addEventListener("click", () => {
-        const g = el.dataset.gallery || "default";
-        const arr = galleries.get(g) || [];
-        const idx = arr.indexOf(el);
-        openLightbox(g, Math.max(0, idx));
-      });
-
-      el.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          el.click();
-        }
-      });
-    });
-
-    lbClose.addEventListener("click", closeLightbox);
-    lbPrev.addEventListener("click", () => go(-1));
-    lbNext.addEventListener("click", () => go(+1));
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (!lightbox.classList.contains("open")) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") go(-1);
-      if (e.key === "ArrowRight") go(+1);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
