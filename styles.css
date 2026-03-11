@@ -765,13 +765,13 @@ body{
 
 .feature h4{
   margin: 0 0 4px;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: -.2px;
 }
 .feature p{
   margin: 0;
   color: rgba(255,255,255,.66);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.45;
 }
 
