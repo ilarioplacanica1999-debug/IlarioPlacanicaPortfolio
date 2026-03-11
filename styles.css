@@ -284,6 +284,10 @@ body{
   opacity: .9;
 }
 
+.logo-chip:visited {
+        color: rgba(255,255,255,.75);
+}
+
 .logo-chip:hover {
         opacity: 1;
         text-decoration: underline;
