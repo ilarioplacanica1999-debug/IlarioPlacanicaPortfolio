@@ -166,6 +166,8 @@ body{
   font-weight: 700;
   border: 1px solid rgba(255,255,255,.35);
   white-space: nowrap;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  transform: translateZ(0);
 }
 
 .cta .dot{
@@ -584,6 +586,7 @@ body{
   color: rgba(255,255,255,.92);
   border: 1px solid rgba(255,255,255,.14);
 }
+
 .cta.dark .dot{ background: rgba(0,0,0,.55); }
 
 .stats{
