@@ -74,7 +74,7 @@
                     and an independent exploration of the Adobe Creative Suite, which first sparked my curiosity for design.
                     During my first year of Architecture at Politecnico di Torino, a drawing course introduced me to 3ds Max with V-Ray, opening my eyes to the world of 3D and digital visualization. 
                     Since then, I have developed a largely self-taught practice focused on visual representation, interactive media, and a broad range of 3D tools. This path led to a collaboration with Primula Costruzioni, 
-                    first through a curricular internship and later through an extracurricular internship, working on immersive real estate experiences.
+                    first through an internship and later working on immersive real estate experiences.
                 </p>
 
                 <h2>EXPLORE MY PROJECTS:</h2>
@@ -217,9 +217,15 @@
         <div class="steps">
           <h3>Workflow</h3>
           <div class="steps-grid">
-            <div class="step"><div class="big">1</div><strong>Brief & References</strong><p>Raccolta riferimenti, mood e obiettivi del render.</p></div>
-            <div class="step"><div class="big">2</div><strong>Production</strong><p>Modeling / materials / lighting e prime anteprime.</p></div>
-            <div class="step"><div class="big">3</div><strong>Final & Delivery</strong><p>Post, export e consegna nelle risoluzioni richieste.</p></div>
+            <div class="step"><div class="big">1</div><strong>Building and Context Modeling</strong><p>The architectural operation and its surrounding context were modeled in Blender, 
+                with a focus on producing a clean and controllable 3D base for real-time visualization. This phase included both the building massing and the neighborhood elements needed 
+                to place the project within a recognizable urban setting.</p></div>
+            <div class="step"><div class="big">2</div><strong>Unreal Assembly, Geospatial Integration, Materials, Lighting and Furnishing</strong><p>The modeled intervention was imported into Unreal Engine 
+                and integrated with the surrounding district inside a real-time environment. Cesium for Unreal was used to bring real-world geospatial data into the scene, helping place the project 
+                within a broader spatial context. Materials lighting and furnishing were then developed to improve readability, atmosphere, and overall visual quality inside the interactive experience.  </p></div>
+            <div class="step"><div class="big">3</div><strong>Interactive System Development and Windows Packaging</strong><p>The interactive experience was built in Unreal Engine through Blueprint-based systems, 
+                including actor logic, Widget Blueprints for the interface, a GameMode Blueprint tailored to touchscreen interaction, and a Player Controller Blueprint to manage user input and navigation. 
+                The final application was packaged as a standalone .exe for Windows, allowing the project to be presented as an interactive real estate tool outside the editor</p></div>
           </div>
         </div>
       </section>
@@ -320,9 +326,20 @@
         <div class="steps">
           <h3>Workflow</h3>
           <div class="steps-grid">
-            <div class="step"><div class="big">1</div><strong>Brief</strong><p>Testo step 1.</p></div>
-            <div class="step"><div class="big">2</div><strong>Production</strong><p>Testo step 2.</p></div>
-            <div class="step"><div class="big">3</div><strong>Delivery</strong><p>Testo step 3.</p></div>
+              <div class="step"><div class="big">1</div><strong>Modeling and Unreal Scene Setup</strong><p>The real estate operation was modeled in Blender as the geometric base of the project, 
+                  then imported into Unreal Engine for scene development. Inside Unreal, the environment was refined through material setup, lighting, and furnishing, while the surrounding context 
+                  was generated with Hunyuan3D and integrated into the final scene assembly to complete the spatial framework of the experience. Blender’s modeling workflow is commonly used to build 
+                  and edit the scene geometry before downstream visualization work.</p></div>
+              <div class="step"><div class="big">2</div><strong>Render Production and Graphic Design</strong><p>360 panoramas and vertical still renders were produced in Unreal Engine from the final scene setup. 
+                  This stage relied on Unreal’s rendering pipeline to generate both immersive panoramic output and presentation stills, which were then refined in Photoshop and 
+                  Illustrator for layout, graphic hierarchy, and communication material. Unreal’s Movie Render Queue is the engine’s high-quality rendering pipeline for this kind of output. </p></div>
+              <div class="step"><div class="big">3</div><strong>Marzipano Tour Development</strong><p>The 360 renders were used to build a Marzipano virtual tour, with interactive hotspots added to 
+                  connect scenes and improve navigation between spaces. Marzipano is designed for web-based panoramic viewing, and its hotspot system places DOM elements at 
+                  fixed positions inside each panorama, making it suitable for scene-to-scene navigation in virtual tours.  </p></div>
+              <div class="step"><div class="big">4</div><strong>Web Deployment and Apartment Pages</strong><p>A dedicated URL was created for each apartment through GitHub Pages,
+                  while maintaining a consistent layout across all pages. Three.js was used to implement the GLB viewer,
+                  and the Marzipano tour was integrated into each page to combine 3D model viewing and panoramic navigation within a single web presentation.
+</p></div>
           </div>
         </div>
       </section>
@@ -407,9 +424,15 @@
         <div class="steps">
           <h3>Workflow</h3>
           <div class="steps-grid">
-            <div class="step"><div class="big">1</div><strong>Brief</strong><p>Testo step 1.</p></div>
-            <div class="step"><div class="big">2</div><strong>Production</strong><p>Testo step 2.</p></div>
-            <div class="step"><div class="big">3</div><strong>Delivery</strong><p>Testo step 3.</p></div>
+            <div class="step"><div class="big">1</div><strong>Reference Setup and Turnaround Preparation</strong><p>The workflow started from a set of 2D character turnaround poses 
+                provided by the concept artist. ComfyUI was used to generate additional front and side T-pose references, creating a more consistent base for proportion matching and 
+                orthographic modeling in Blender. This step helped standardize the character views before moving into the 3D pha.</p></div>
+            <div class="step"><div class="big">2</div><strong>Character Modeling, Texturing and Material Setup</strong><p>The character was modeled in Blender with a focus on stylized proportions, 
+                readable silhouette, and clean surface definition. Once the base model was completed, texturing and material setup were developed to establish the final look of the asset, using 
+                Blender’s material system to define surface appearance, color response, and texture behavior.</p></div>
+            <div class="step"><div class="big">3</div><strong>Armature, Rigify Control Rig and Animation</strong><p>The rigging phase involved building the character armature and generating the animation 
+                controls with Rigify. Rigify uses a meta-rig workflow: the guide bones are first positioned to match the character, then a full control rig is generated from that structure. The animation 
+                was then created in Blender by posing the rig and setting keyframes in the timeline, allowing movement tests and basic character performance to be developed directly on the control setup.</p></div>
           </div>
         </div>
       </section>
@@ -491,9 +514,14 @@
         <div class="steps">
           <h3>Workflow</h3>
           <div class="steps-grid">
-            <div class="step"><div class="big">1</div><strong>Brief</strong><p>Testo step 1.</p></div>
-            <div class="step"><div class="big">2</div><strong>Production</strong><p>Testo step 2.</p></div>
-            <div class="step"><div class="big">3</div><strong>Delivery</strong><p>Testo step 3.</p></div>
+            <div class="step"><div class="big">1</div><strong>Base Modeling from 2D Reference</strong><p>The project starts from 2D reference artwork used to define the character’s overall 
+                proportions, silhouette, and primary shapes. This phase focuses on building a clean base model that establishes the main structure before moving into the sculpting stage.</p></div>
+            <div class="step"><div class="big">2</div><strong>Sculpting, Detail and Retopology (In Progress)</strong><p>The character is currently being refined through digital sculpting, 
+                with attention to secondary forms, surface definition, and stylized anatomical detail. In parallel, the retopology phase is planned to rebuild the mesh into a cleaner and 
+                more animation-ready topology after sculpt development.</p></div>
+            <div class="step"><div class="big">3</div><strong>Inverse Kinematics Control Rig in Unreal Engine (Goal)</strong><p>The final goal is to bring the character into Unreal Engine and develop 
+                an inverse kinematics Control Rig setup for animation, with the aim of animating the character for a videogame environment. This stage will focus on building a rig structure 
+                suitable for game-oriented animation workflows, using Unreal’s Control Rig and IK systems to support posing and character control.</p></div>
           </div>
         </div>
       </section>
