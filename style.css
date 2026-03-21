@@ -330,12 +330,17 @@ main {
     .project-meta p,
     .project-copy-sticky p,
     .project-editorial-copy p,
-    .project-workflow article p,
     .project-statement p,
     .project-tool-list li {
         font-size: 1.15rem;
         line-height: 1.6;
     }
+
+.project-workflow article p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
 
 .project-index {
     display: grid;
@@ -896,6 +901,9 @@ main {
 }
 
 .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: center 20%;
 }
 
@@ -912,10 +920,12 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.9rem;
+    justify-self: start;
+    text-align: left;
+    gap: 1rem;
     margin-top: 0;
-    font-size: 0.92rem;
-    letter-spacing: 0.08em;
+    font-size: clamp(1.08rem, 1.35vw, 1.35rem);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 
@@ -1061,7 +1071,8 @@ main {
     }
 
     .about-image-wrap {
-        min-height: 28rem;
+        min-height: 46rem;
+        overflow: hidden;
     }
 }
 
