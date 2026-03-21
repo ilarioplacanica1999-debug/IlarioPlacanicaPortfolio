@@ -29,7 +29,7 @@
     --black-soft: rgba(5, 5, 5, 0.72);
     --white: #f4f1ea;
     --sand: #d7d0c4;
-    --max: 1600px;
+    --max: 1320px;
     --ease: cubic-bezier(.2, .8, .2, 1);
     --eyebrow-size: 0.92rem;
     --header-brand-size: 1.125rem;
@@ -339,7 +339,7 @@ main {
 
 .project-index {
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(330px, 0.8fr);
+    grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
     border-top: 1px solid var(--line);
 }
 
