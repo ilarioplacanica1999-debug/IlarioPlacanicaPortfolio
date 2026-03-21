@@ -919,7 +919,7 @@ main {
     flex-direction: column;
     align-items: flex-start;
     justify-self: start;
-    text-align: left;
+    text-align: right;
     gap: 1rem;
     margin-top: 0;
     font-size: clamp(1.08rem, 1.35vw, 1.35rem);
