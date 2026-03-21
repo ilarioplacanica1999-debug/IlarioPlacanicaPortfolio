@@ -70,7 +70,7 @@
                 <a class="project-index-item is-active"
                    href="#work-1"
                    data-preview-type="video"
-                   data-preview-src="assets/video/work-1-final.mp4">
+                   data-preview-src="assets/video/work-1-final.mp4"
                    data-preview-poster="assets/img/work-1.JPG?v=2">
                     <span class="project-index-num">01</span>
                     <span class="project-index-main">
@@ -82,7 +82,7 @@
                 <a class="project-index-item"
                    href="#work-2"
                    data-preview-type="video"
-                   data-preview-src="assets/video/work-2-gallery-2.mp4">
+                   data-preview-src="assets/video/work-2-gallery-2.mp4"
                    data-preview-poster="assets/img/work-2-gallery-2.jpg">
                     <span class="project-index-num">02</span>
                     <span class="project-index-main">
@@ -94,7 +94,7 @@
                 <a class="project-index-item"
                    href="#work-3"
                    data-preview-type="video"
-                   data-preview-src="assets/video/work-3-final.mp4">
+                   data-preview-src="assets/video/work-3-final.mp4"
                    data-preview-poster="assets/img/work-3.jpg">
                     <span class="project-index-num">03</span>
                     <span class="project-index-main">
@@ -693,15 +693,15 @@
         </section>
     </main>
 
-    <div class="lightbox" aria-hidden="true">
+    <div class="lightbox" id="lightbox" aria-hidden="true">
         <button class="lightbox-close" type="button" aria-label="Close lightbox">Close</button>
 
         <div class="lightbox-shell">
-            <div class="lightbox-stage">
+            <div class="lightbox-stage" id="lightbox-stage">
                 <button class="lightbox-nav lightbox-nav--prev" type="button" aria-label="Previous media">‹</button>
                 <button class="lightbox-nav lightbox-nav--next" type="button" aria-label="Next media">›</button>
             </div>
-            <p class="lightbox-caption"></p>
+            <p class="lightbox-caption" id="lightbox-caption"></p>
         </div>
     </div>
 
